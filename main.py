@@ -222,3 +222,18 @@ def status(message):
 
 # Start the bot
 bot.polling(none_stop=True)
+
+# --- Keep-alive Web Server for Render ---
+import threading
+from http.server import SimpleHTTPRequestHandler, HTTPServer
+import os
+
+def run_web():
+    port = int(os.environ.get("PORT", 8080))  # Always use int here
+    server = HTTPServer(('0.0.0.0', port), SimpleHTTPRequestHandler)
+    server.serve_forever()
+
+# Start the web server in background
+thread = threading.Thread(target=run_web)
+thread.daemon = True
+thread.start()
