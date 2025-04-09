@@ -1,0 +1,7 @@
+telethon
+requests
+python-dotenv
+pyTelegramBotAPI
+requests
+fake-useragent
+beautifulsoup4
