@@ -5,3 +5,4 @@ pyTelegramBotAPI
 requests
 fake-useragent
 beautifulsoup4
+python-telegram-bot==20.3
